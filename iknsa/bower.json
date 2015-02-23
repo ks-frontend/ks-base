@@ -1,7 +1,7 @@
 {
-  "name": "ks-base",
+  "name": "iknsa/ks-base",
   "version": "0.0.0",
-  "homepage": "https://github.com/iknsa/ks-base",
+  "homepage": "https://github.com/ks-frontend/ks-base.git",
   "authors": [
     "Khalid Sookia <khalidsookia@gmail.com>"
   ],
