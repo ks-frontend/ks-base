@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+        banner: '/*!\n * <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
           '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-          '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-          '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-          ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+          '<%= pkg.homepage ? " * " + pkg.homepage + "\\n" : "" %>' +
+          ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+          ' * Licensed <%= pkg.license %>\n */\n',
 
         clean: {
             dist: ['dist/*'],
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             dev: {
                 options: {
                   sassDir: 'lib/',
-                  cssDir: 'dist/css/libs',
+                  cssDir: 'dist/css/lib',
                   http_fonts_path: "/",
                   fontsDir: 'fonts',
                   environment: 'development',
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: ['lib/js/**'],
-                        dest: 'dist/js/'
+                        dest: 'dist/js'
                     },
              
                     // makes all src relative to cwd 
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                     // flattens results to a single level 
                     // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'},
                 ],
-            },
+            }
         },
 
         concat: {
@@ -62,11 +62,11 @@ module.exports = function(grunt) {
                 stripBanners: true
             },
             css: {
-                src: ['dist/css/libs/**/*.css'],
+                src: ['dist/css/lib/**/*.css'],
                 dest: 'dist/css/<%= pkg.name %>.concat.css',
             },
             js: {
-                src: ['dist/js/libs/**/*.js'],
+                src: ['dist/js/lib/**/*.js'],
                 dest: 'dist/js/<%= pkg.name %>.concat.js'
             },
         },
@@ -94,6 +94,6 @@ module.exports = function(grunt) {
         },
     });
 
-    // grunt.registerTask("test", ["test"]);
+    grunt.registerTask("default", ["clean", "compass", "copy", "concat", "cssmin", "uglify"]);
     
 };
