@@ -1,11 +1,11 @@
 {
   "name": "iknsa/ks-base",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/ks-frontend/ks-base.git",
   "authors": [
     "Khalid Sookia <khalidsookia@gmail.com>"
   ],
-  "description": "Just a basic folder structure for the ks-frontend-framework",
+  "description": "Just a basic folder structure for the ks-frontend-framework plugins",
   "main": "ks-base/lib/base.js",
   "keywords": [
     "Front end file structure"
@@ -20,7 +20,6 @@
     "tests"
   ],
   "dependencies": {
-    "ks-core": "~0.0.0"
   },
   "devDependencies": {
   }
