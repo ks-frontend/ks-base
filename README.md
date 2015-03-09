@@ -13,3 +13,7 @@ This repository's bower.json contains the dependency of the framework's core.
 ```console
 $ bower install ks-base
 ```
+
+[![Bower version](https://badge.fury.io/bo/ks-base.svg)](http://badge.fury.io/bo/ks-base)
+
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
