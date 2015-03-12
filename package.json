@@ -1,6 +1,6 @@
 {
   "name": "ks-base",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Default file structure for iknsa-frontend-framework libs",
   "main": "templates/base.html",
   "scripts": {
